@@ -25,5 +25,4 @@ ON DimProductSubcategory.ProductSubcategoryKey = DimProduct.ProductSubcategoryKe
 LEFT JOIN DimProductCategory
 ON DimProductCategory.ProductCategoryKey = DimProductSubcategory.ProductCategoryKey;
   </pre>
-
 ![](model.JPG)
