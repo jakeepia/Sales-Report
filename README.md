@@ -108,7 +108,7 @@ CALCULATE(
 
 ## Dashboard
 
-![](dashboar.JPG)
+![](dashboard.JPG)
 
 ## Vital Recommendations
 1. *Monitor and Optimize Sales Trends:* The sales trend shows significant growth in recent years, especially in 2013 and early 2014. Maintain the momentum by identifying and replicating successful strategies used during this period, such as seasonal promotions or new product launches.
