@@ -14,7 +14,7 @@ This sales report analysis covers the period from 2010 to 2014, utilizing data e
 The data was sourced from SQL Server Management Studio, specifically from the _AdventureWorksDW2022_ database. The following tables were used:
 - DimCustomer
 - DimGeography
-- DimProductCategory
+- DimProductCategory<br>
 A LEFT JOIN query was employed to combine the DimProductCategory table:
 
 <pre>
@@ -24,6 +24,13 @@ LEFT JOIN DimProductSubcategory
 ON DimProductSubcategory.ProductSubcategoryKey = DimProduct.ProductSubcategoryKey
 LEFT JOIN DimProductCategory
 ON DimProductCategory.ProductCategoryKey = DimProductSubcategory.ProductCategoryKey;
+  </pre>
+
+- FactInternetSales
+
+<pre>
+SELECT * FROM FactInternetSales
+ORDER BY UnitPrice
   </pre>
   
 ![](model.JPG)
@@ -51,7 +58,7 @@ ON DimProductCategory.ProductCategoryKey = DimProductSubcategory.ProductCategory
 ### 5. Average Amount by Country
 - Insight: Reveals geographical disparities in sales performance, guiding regional sales strategies.
 
-## DAX Formulas Used
+## DAX Formulas Used in Creating Measures and Calculated Columns
 - Total Sales:
 <pre>
 TotalSales = SUM(FactInternetSales[SalesAmount])
@@ -104,6 +111,11 @@ CALCULATE(
         FactInternetSales[WeekDate] <= MAX(FactInternetSales[WeekDate])
     )
 )
+  </pre>
+
+ - Week Date:
+<pre>
+  WeekDate = FactInternetSales[OrderDate] + (7 - WEEKDAY(FactInternetSales[OrderDate]))
   </pre>
 
 ## Dashboard
