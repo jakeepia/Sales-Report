@@ -15,7 +15,7 @@ The data was sourced from SQL Server Management Studio, specifically from the _A
 - DimCustomer
 - DimGeography
 - DimProductCategory<br>
-A LEFT JOIN query was employed to combine the DimProductCategory table:
+*A LEFT JOIN query was employed to combine the DimProductCategory table:*
 
 <pre>
 SELECT DimProduct.ProductKey, DimProductCategory.EnglishProductCategoryName
@@ -32,7 +32,16 @@ ON DimProductCategory.ProductCategoryKey = DimProductSubcategory.ProductCategory
 SELECT * FROM FactInternetSales
 ORDER BY UnitPrice
   </pre>
-  
+
+## Data Model:
+A data model was created by establishing relationships between these tables to enhance the dataset for analysis. Specifically:
+
+- DimCustomer was linked to FactInternetSales through the "CustomerKey".
+- DimGeography was linked to DimCustomer through the "GeographyKey".
+- DimProductCategory was linked to FactInternetSales through the "ProductKey".<br>
+
+These relationships enabled a more comprehensive analysis, allowing for meaningful insights by connecting customer, product, location, and sales data across the dataset.
+
 ![](model.JPG)
 
 ## The purpose of this analysis is to:
