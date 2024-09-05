@@ -3,7 +3,7 @@
 ![](intro.JPG)
 
 ## Project Overview:
-This sales report analysis covers the period from 2010 to 2014, utilizing data extracted from the AdventureWorksDW2022 database. The primary goal of this project is to provide comprehensive insights into sales performance and trends over the specified period, using Power BI for visualization and analysis.
+This sales report analysis covers the period from 2010 to 2014, utilizing data extracted from the AdventureWorksDW2022 database with **SQL**. The primary goal of this project is to provide comprehensive insights into sales performance and trends over the specified period, using **Power BI** for visualization and analysis.
 
 ## Skills/ concepts demonstrated:
 - Data extraction and transformation using SQL.
