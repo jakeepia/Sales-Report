@@ -1,4 +1,4 @@
-# Sales Report Analysis.
+# Sales Report Analysis
 
 ![](intro.JPG)
 
