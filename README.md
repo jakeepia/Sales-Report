@@ -51,34 +51,18 @@ These relationships enabled a more comprehensive analysis, allowing for meaningf
 4. **Transaction Analysis by Product:** Identify which products are driving sales.
 5. **Geographical Sales Analysis:** Determine average sales amounts by country to understand geographical performance.
 
-## Analysis and Visualization
-### 1. Total Sales and Total Orders
-- _Insight:_ Provides a high-level overview of sales volumes and order counts over the four-year period.
-  
-### 2. Sales by Week (1 week, 4 weeks, 26 weeks, 52 weeks)
-- _Insight:_ Helps identify short-term and long-term sales trends, seasonal patterns, and potential anomalies.
-
-### 3. Running Total by Week
-- _Insight:_ Shows the cumulative sales growth over time, allowing for easy identification of periods with significant growth or decline.
-
-### 4. Transaction by Product
-- _Insight:_ Highlights the top-performing products and categories, aiding in inventory and marketing strategy decisions.
-
-### 5. Average Amount by Country
-- _Insight:_ Reveals geographical disparities in sales performance, guiding regional sales strategies.
-
 ## DAX Formulas Used in Creating Measures and Calculated Columns
-- Total Sales:
+- **Total Sales:**
 <pre>
 TotalSales = SUM(FactInternetSales[SalesAmount])
   </pre>
 
-- Total Orders:
+- **Total Orders:**
 <pre>
 TotalSales = COUNTROWS(FactInternetSales)
   </pre>
 
-- Sales by Week:
+- **Sales by Week:**
 <pre>
 Sales4Weeks = CALCULATE(
     SUM(FactInternetSales[SalesAmount]),
@@ -111,7 +95,7 @@ CALCULATE(
 )
   </pre>
 
-- Running Total by Week:
+- **Running Total by Week:**
 <pre>
 CALCULATE(
     COUNT(FactInternetSales[CustomerKey]), 
@@ -122,10 +106,26 @@ CALCULATE(
 )
   </pre>
 
- - Week Date:
+ - **Week Date:**
 <pre>
   WeekDate = FactInternetSales[OrderDate] + (7 - WEEKDAY(FactInternetSales[OrderDate]))
   </pre>
+
+## Analysis and Visualization
+### 1. Total Sales and Total Orders
+- _Insight:_ Provides a high-level overview of sales volumes and order counts over the four-year period.
+  
+### 2. Sales by Week (1 week, 4 weeks, 26 weeks, 52 weeks)
+- _Insight:_ Helps identify short-term and long-term sales trends, seasonal patterns, and potential anomalies.
+
+### 3. Running Total by Week
+- _Insight:_ Shows the cumulative sales growth over time, allowing for easy identification of periods with significant growth or decline.
+
+### 4. Transaction by Product
+- _Insight:_ Highlights the top-performing products and categories, aiding in inventory and marketing strategy decisions.
+
+### 5. Average Amount by Country
+- _Insight:_ Reveals geographical disparities in sales performance, guiding regional sales strategies.
 
 ## Dashboard
 
