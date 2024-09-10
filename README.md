@@ -2,15 +2,15 @@
 
 ![](intro.JPG)
 
-## Project Overview:
+## Project Overview
 This sales report analysis covers the period from 2010 to 2014, utilizing data extracted from the AdventureWorksDW2022 database with **SQL**. The primary goal of this project is to provide comprehensive insights into sales performance and trends over the specified period, using **Power BI** for visualization and analysis.
 
-## Skills/ Concepts Demonstrated:
+## Skills/ Concepts Demonstrated
 - Data extraction and transformation using SQL.
 - Advanced data analysis and visualization with Power BI.
 - Application of DAX for detailed and dynamic business insights.
 
-## Data Source:
+## Data Source
 The data was sourced from SQL Server Management Studio, specifically from the _AdventureWorksDW2022_ database. The following tables were used:
 - DimCustomer
 - DimGeography
@@ -33,7 +33,7 @@ SELECT * FROM FactInternetSales
 ORDER BY UnitPrice
   </pre>
 
-## Data Model:
+## Data Model
 A data model was created by establishing relationships between these tables to enhance the dataset for analysis. Specifically:
 
 - DimCustomer was linked to FactInternetSales through the "CustomerKey".
