@@ -51,65 +51,16 @@ These relationships enabled a more comprehensive analysis, allowing for meaningf
 4. **Transaction Analysis by Product:** Identify which products are driving sales.
 5. **Geographical Sales Analysis:** Determine average sales amounts by country to understand geographical performance.
 
-## DAX Formulas Used in Creating Measures and Calculated Columns
+## DAX
 - **Total Sales:**
-<pre>
-TotalSales = SUM(FactInternetSales[SalesAmount])
-  </pre>
 
 - **Total Orders:**
-<pre>
-TotalSales = COUNTROWS(FactInternetSales)
-  </pre>
 
 - **Sales by Week:**
-<pre>
-Sales4Weeks = CALCULATE(
-    SUM(FactInternetSales[SalesAmount]),
-    DATESINPERIOD(FactInternetSales[WeekDate], LASTDATE(FactInternetSales[WeekDate]), -28, DAY)
-)
-/
-CALCULATE(
-    DISTINCTCOUNT(FactInternetSales[WeekDate]),
-    DATESINPERIOD(FactInternetSales[WeekDate], LASTDATE(FactInternetSales[WeekDate]), -28, DAY)
-)
-  
-Sales26Weeks = CALCULATE(
-    SUM(FactInternetSales[SalesAmount]),
-    DATESINPERIOD(FactInternetSales[WeekDate], LASTDATE(FactInternetSales[WeekDate]), -182, DAY)
-)
-/
-CALCULATE(
-    DISTINCTCOUNT(FactInternetSales[WeekDate]),
-    DATESINPERIOD(FactInternetSales[WeekDate], LASTDATE(FactInternetSales[WeekDate]), -182, DAY)
-)
-  
-Sales52Weeks = CALCULATE(
-    SUM(FactInternetSales[SalesAmount]),
-    DATESINPERIOD(FactInternetSales[WeekDate], LASTDATE(FactInternetSales[WeekDate]), -365, DAY)
-)
-/
-CALCULATE(
-    DISTINCTCOUNT(FactInternetSales[WeekDate]),
-    DATESINPERIOD(FactInternetSales[WeekDate], LASTDATE(FactInternetSales[WeekDate]), -365, DAY)
-)
-  </pre>
 
 - **Running Total by Week:**
-<pre>
-CALCULATE(
-    COUNT(FactInternetSales[CustomerKey]), 
-    FILTER(
-        ALLSELECTED(FactInternetSales),
-        FactInternetSales[WeekDate] <= MAX(FactInternetSales[WeekDate])
-    )
-)
-  </pre>
 
  - **Week Date:**
-<pre>
-  WeekDate = FactInternetSales[OrderDate] + (7 - WEEKDAY(FactInternetSales[OrderDate]))
-  </pre>
 
 ## Analysis and Visualization
 ### 1. Total Sales and Total Orders
